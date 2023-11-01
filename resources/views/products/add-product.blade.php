@@ -27,7 +27,7 @@
                 <label for="image_url">Image URL</label>
                 <input type="file" accept="images/*" name="image" class="form-control" required>
             </div>
-            <div class="form-group">
+            {{-- <div class="form-group">
                 <label for="categories">Categories</label>
                 <select class="form-select" name="category_id">
                     @foreach ($categories as $item)
@@ -36,6 +36,14 @@
                     @endforeach
                     </select>
                
+            </div> --}}
+            <div class="form-group">
+                <select name="category_id" class="form-select"  >
+                    <option value="" selected>Select Category</option>
+                    @foreach($categories as $category)
+                    <option value="{{$category->id}}">{{$category->name}}</option>
+                    @endforeach
+                </select>
             </div>
             <button type="submit" class="btn btn-primary">Add Product</button>
         </form>
